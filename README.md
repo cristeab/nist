@@ -21,6 +21,8 @@ compile in 'Debug' mode use:
 
    cmake .. -DCMAKE_BUILD_TYPE=Debug
 
+- compile
+
    make
 
 An executable 'statisticaltests' is created in the build folder.
