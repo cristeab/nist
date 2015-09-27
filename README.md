@@ -1,7 +1,7 @@
-Statistical Tests Suite
+NIST Statistical Tests Suite
 ================
 
-NIST statistical tests implemented in C++ with MATLAB interface. 
+The statistical tests are implemented in C++ with MATLAB interface. 
 For further details see http://sites.google.com/site/cristeab/home/nist-2
 
 Compilation instructions:
@@ -20,6 +20,8 @@ will fail. The sources are configured to be compiled in 'Release' mode by defaul
 compile in 'Debug' mode use:
 
    cmake .. -DCMAKE_BUILD_TYPE=Debug
+
+- compile
 
    make
 
