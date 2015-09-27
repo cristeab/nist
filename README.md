@@ -9,7 +9,7 @@ Compilation instructions:
 
    mkdir build
 
-- change the current folder to the created folder and issue the following command:
+- change the current folder to the created folder and issue the following commands:
 
    cd build
 
