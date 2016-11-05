@@ -4,7 +4,7 @@
 void StatisticalTests::setBinaryVector(int nb_offset_bytes)
 {
 	std::ifstream input_stream(input_file_name, std::ios::binary);
-	if (input_stream==NULL)
+	if (!input_stream)
 	{
 		std::cout << "set_binary_vector: cannot open file for reading.\n";
 		return;
@@ -1033,7 +1033,7 @@ double* StatisticalTests::randomExcursions(void)
 			x = stateX[i];
 			sum = 0.0;
 			for (k = 0; k < 6; k++)
-				sum += pow(nu[k][i] - double(J)*pi[(int)fabs(x)][k], 2.0)/double(J*pi[(int)fabs(x)][k]);
+				sum += pow(nu[k][i] - double(J)*pi[std::abs(x)][k], 2.0)/double(J*pi[std::abs(x)][k]);
 			P_value[i] = gsl_sf_gamma_inc_Q(2.5, sum/2.0);
 			if (P_value[i]>=alpha) nb_passes++;
 		}
@@ -1091,7 +1091,7 @@ double* StatisticalTests::randomExcursionsVariant(void)
 		count = 0;
 		for (i = 0; i < nb_bits; i++)
 			if (S_k[i] == x) count++;
-		P_value[p] = gsl_sf_erfc(fabs(count-J)/(sqrt(2.0*J*(4.0*fabs(x)-2))));
+		P_value[p] = gsl_sf_erfc(std::abs(count-J)/(sqrt(2.0*J*(4.0*std::abs(x)-2))));
 		nb_passes++;
 	}
 	delete[] S_k;

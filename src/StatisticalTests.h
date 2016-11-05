@@ -131,7 +131,7 @@ public:
 	void setOutputFileName(const char* output_file_name)
 	{
 		output_stream.open(output_file_name);
-		if (output_stream==NULL)
+		if (!output_stream)
 		{
 			std::cout << "set_output_file_name: cannot open file for writing.\n";
 			return;
